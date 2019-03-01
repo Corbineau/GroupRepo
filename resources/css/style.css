@@ -14,6 +14,7 @@ header {
 }
 
 h1 {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
     font-size: 35px;
     font-weight: bold;
     padding: 10px;
@@ -21,6 +22,12 @@ h1 {
 
 p {
     margin: 5px 0;
+}
+
+p::first-letter {
+    font-size: 2rem;
+    color: purple;
+    text-decoration: 1px solid black overline;
 }
 
 .center {
@@ -34,7 +41,7 @@ p {
 }
 
 #lorem {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Srisakdi', cursive;
     line-height: 1.5rem;
     font-weight: bold;
 }
@@ -42,13 +49,56 @@ p {
 #ipsum {
 
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    line-height: 15px;
+    line-height: 1.5rem;
+    font-size: 24px;
     font-weight: bolder;
 }
 
-#sitamet {
-    font-family: 'Courier New', Courier, monospace;
-    line-height: 2rem;
-    font-size: 13px;
+.sitamet {
+    width: 100px;
+    height: 100px;
+    background: red;
+    -webkit-transition: width 2s; /* Safari */
+    transition: width 2s;
+}
 
+.sitamet p {
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 50px;
+    font-size: 13px;
+    color: white;
+}
+
+.sitamet:hover {
+    width: 100%;
+    height: 100%;
+  }
+
+
+.fas fa-book-open {
+    color: red;
+}
+
+a {
+    color: green;
+}
+
+a::first-letter {
+    color: turquoise;
+}
+
+a:active {
+    color: pink;
+    opacity: 75%;
+    font-weight: bold;
+}
+
+a:hover {
+    color: fuchsia;
+    font-weight: bolder;
+}
+
+a:visited {
+    color: purple;
+    text-decoration: 1px pink dotted;
 }
