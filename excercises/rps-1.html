@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors Part 1</title>
+</head>
+
+<body>
+
+  <div id="game">
+
+    <p>Press r, s, or p to start</p>
+
+    <p>You chose: <span id="yourKey"> </span></p>
+    <p>Computer chose: <span id="computerKey"> </span></p>
+
+    <p>Wins: <span id="wins"> </span></p>
+    <p>Losses: <span id="losses"> </span></p>
+    <p>Ties: <span id="ties"> </span></p>
+  </div>
+
+  <script type="text/javascript">
+
+    //establish array of computer choices
+    var options = ["r", "p", "s"]
+
+    //set the starting scores
+    var wins = 0;
+    var losses = 0;
+    var ties = 0;
+
+    //write to elements
+    var yourChoice = document.getElementById("yourKey");
+    var computerChoice = document.getElementById("computerKey");
+    var writeTie = document.getElementById("ties");
+    var writeWin = document.getElementById("wins");
+    var writeLoss = document.getElementById("losses");
+
+    // Randomly chooses a choice from the options array. This is the Computer's guess.
+   
+    // Whenever a key is pressed, do stuff".
+    document.onkeyup = function() {
+      yourChoice.textContent = event.key;
+      var uThrow = event.key;
+      if((uThrow === "r") || (uThrow === "s") || (uThrow="p")) {
+        var cThrow = options[Math.floor(Math.random() * options.length)];
+        computerChoice.textContent = cThrow;
+        if(((uThrow === "r" ) && (cThrow === "s")) || ((uThrow === "s" ) && (cThrow ==="p")) || ((uThrow === "r") && (cThrow === "s"))) {
+          wins++;
+        } else if(uThrow === cThrow) {
+          ties++;
+        } else {
+          losses++;
+        }
+      writeTie.textContent = ties;
+      writeWin.textContent = wins;
+      writeLoss.textContent = losses;
+      }
+    };
+
+console.log(`Wins: ${wins}, losses: ${losses}, Ties ${ties}`);
+
+  </script>
+
+</body>
+
+</html>
