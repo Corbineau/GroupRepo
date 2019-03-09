@@ -39,14 +39,17 @@ var car = {
 document.onkeyup = function() {
 
     var controls = event.key;
-    if(controls === 'd') {
+    if(controls === 't') {
+        car.getTuneUp();
+        reWriteStats(); 
+    } else if( car.isWorking === false) {
+        console.log("The car is dead. you need to get a tune up!");
+    }
+    else if(controls === 'd') {
         car.driveToWork();
         reWriteStats();
     } else if(controls === 'w') {
         car.driveAroundWorld();
-        reWriteStats();
-    } else if(controls === 't') {
-        car.getTuneUp();
         reWriteStats();
     } else if(controls === 'h') {
         car.honk();
