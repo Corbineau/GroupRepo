@@ -38,7 +38,7 @@ var car = {
 
 document.onkeyup = function() {
 
-    var controls = event.key;
+    var controls = event.key.toLowerCase();
     if(controls === 't') {
         car.getTuneUp();
         reWriteStats(); 
